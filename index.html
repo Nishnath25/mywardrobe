@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyWardrobe 👗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>MyWardrobe 👗</h1>
+
+    <!-- LOGIN -->
+    <div id="loginSection">
+      <input type="email" id="emailInput" placeholder="Enter your email">
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="appSection" class="hidden">
+      <p id="welcomeText"></p>
+      <button class="logout" onclick="logout()">Logout</button>
+
+      <div class="tabs">
+        <button id="tabWardrobe" class="active" onclick="showTab('wardrobe')">👕 My Wardrobe</button>
+        <button id="tabWorn" onclick="showTab('worn')">📅 What I Wore</button>
+      </div>
+
+      <!-- Wardrobe Tab -->
+      <div id="wardrobeTab">
+        <input type="text" id="dressInput" placeholder="Enter dress name">
+        <button onclick="addDress()">Add</button>
+        <ul id="dressList"></ul>
+      </div>
+
+      <!-- Worn Tab -->
+      <div id="wornTab" class="hidden">
+        <input type="date" id="wearDate">
+        <h4>Select dresses worn:</h4>
+        <ul id="wearOptions"></ul>
+        <button onclick="saveWorn()">Save</button>
+
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
