@@ -1,4 +1,7 @@
-const loginSection = document.getElementById('loginSection');
+
+
+
+  const loginSection = document.getElementById('loginSection');
 const appSection = document.getElementById('appSection');
 const emailInput = document.getElementById('emailInput');
 const welcomeText = document.getElementById('welcomeText');
@@ -9,7 +12,7 @@ const historyList = document.getElementById('historyList');
 let wardrobe = [], history = [];
 let email = localStorage.getItem('currentUser');
 
-// Auto-login if saved
+// Auto-login if already logged in
 if (email) showApp(email);
 
 function login() {
@@ -36,7 +39,7 @@ function logout() {
   location.reload();
 }
 
-// Tab Switching
+// Tab Switch
 function showTab(tab) {
   document.getElementById('wardrobeTab').classList.add('hidden');
   document.getElementById('wornTab').classList.add('hidden');
@@ -53,7 +56,7 @@ function showTab(tab) {
   }
 }
 
-// Wardrobe
+// Wardrobe Section
 function loadWardrobe() {
   wardrobe = JSON.parse(localStorage.getItem(email + '_wardrobe')) || [];
   displayWardrobe();
@@ -123,6 +126,7 @@ function saveWorn() {
   refreshWearOptions();
 }
 
+// History Section
 function loadHistory() {
   history = JSON.parse(localStorage.getItem(email + '_history')) || [];
   displayHistory();
